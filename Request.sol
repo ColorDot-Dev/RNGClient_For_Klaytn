@@ -18,7 +18,7 @@ contract Request {
         return abi.decode(received_data, (uint256)); // Currently, fee is 5 KLAY.
     }
 
-    function submitUserAnswer() public payable {
+    function submitUserAnswer() public payable { // If you cannot get random number, do this.
         require(getFee() == msg.value, "KLAY sent incorrect");
         require(keccak256(abi.encodePacked(_userStates[msg.sender])) != keccak256(abi.encodePacked(pending)), "Already Submitted");
 
