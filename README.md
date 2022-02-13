@@ -1,5 +1,5 @@
 # RNGClient
-RNG for Client using VRF in Klaytn Chain.
+RNG for Client using VRF in Klaytn Chain. You can get your random number in Klaytn IDE.
 
 ## Settings
 For Baobab Network, VRFCoordinator = 0xF32797118032CDB735Ce31678bA1Cd8A0fd7cc42   
