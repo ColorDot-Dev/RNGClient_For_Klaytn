@@ -1,4 +1,4 @@
-# VRFClient
+# RNGClient
 RNG for Client using VRF in Klaytn Chain.
 
 ## Settings
