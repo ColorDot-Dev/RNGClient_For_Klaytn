@@ -15,7 +15,7 @@ contract Request {
     function getFee() public view returns (uint256) {
         (bool sent1, bytes memory received_data) = _VRFCoordinator.staticcall(abi.encodeWithSignature("getFee()"));
         require(sent1, "Call Error");
-        return abi.decode(received_data, (uint256));
+        return abi.decode(received_data, (uint256)); // Currently, fee is 5 KLAY.
     }
 
     function submitUserAnswer() public payable {
