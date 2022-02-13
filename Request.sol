@@ -5,8 +5,9 @@ contract Request {
     string private constant idle = "idle";
     string private constant pending = "pending";
     string private constant received = "received";
-    address private constant _VRFCoordinator = 0xF32797118032CDB735Ce31678bA1Cd8A0fd7cc42;
-
+    address private constant _VRFCoordinator = 0xF32797118032CDB735Ce31678bA1Cd8A0fd7cc42; // Use it for Baobab Network
+    address private constant _VRFCoordinator = 0x4d50eD3668fa645d7182D2bD55658E76d5331376; // Use it for Cypress Network
+    
     mapping(address => bytes32) private _userAnswers;
     mapping(address => uint256) private _concatedAnswers;
     mapping(address => string) private _userStates;
