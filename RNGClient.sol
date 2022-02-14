@@ -19,7 +19,7 @@ contract Request {
         return abi.decode(received_data, (uint256)); // Currently, fee is 1 KLAY.
     }
 
-    function submitUserAnswer() public payable { // If you cannot get random number, do this.
+    function submitUserAnswer() public payable { // If you want to get your random number, do this.
         require(getFee() == msg.value, "KLAY sent incorrect");
         require(keccak256(abi.encodePacked(_userStates[msg.sender])) != keccak256(abi.encodePacked(pending)), "Already Submitted");
 
@@ -39,7 +39,7 @@ contract Request {
         require(sent2, "Send Error");
     }
 
-    function submitUserAnswerAgain() public {
+    function submitUserAnswerAgain() public { // If you cannot get random number, do this.
         require(keccak256(abi.encodePacked(_userStates[msg.sender])) == keccak256(abi.encodePacked(pending)), "Never Submitted");
         require(keccak256(abi.encodePacked(_serverStates[msg.sender])) != keccak256(abi.encodePacked(received)), "Already Received");
         (bool sent2, ) = _VRFCoordinator.call(abi.encodeWithSignature("feePaid(address,bytes32)", msg.sender, _userAnswers[msg.sender]));
